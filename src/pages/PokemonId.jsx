@@ -45,7 +45,7 @@ const PokemonId = () => {
 
         {/* informacion del pokemon */}
         <section className='flex justify-center'>
-          <div className=' border border-neutral-500 w-[70px] h-[50px] flex justify-center items-center font-medium text-2xl rounded-none'>{"#" + pokemon?.id} 
+          <div className=' border border-neutral-500 w-[70px] h-[50px] flex justify-center items-center font-medium text-2xl rounded-none overflow-hidden'>{"#" + pokemon?.id} 
           </div>
         </section>
 
