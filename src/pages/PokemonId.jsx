@@ -15,6 +15,9 @@ const PokemonId = () => {
     return `${(baseStat * 100) / 255}%`
   }
 
+  const uniqueID = () => { 
+    return Math.random().toString(30).substring(2);           
+} 
 
   useEffect(() => {
     const URL = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`;
@@ -77,7 +80,7 @@ const PokemonId = () => {
             <h3 className=' text-xl font-bold'>Abilites</h3>
             <div className="flex flex-wrap ml-8 mr-8 justify-center">
               {pokemon?.abilities?.map((abilities) => (
-                <div className={`pt-1 pb-1 pl-4 pr-4 m-4 rounded-3xl  bg-gray-300 text-slate-100 `} key={abilities.ability.url}>
+                <div className={`pt-1 pb-1 pl-4 pr-4 m-4 rounded-3xl  bg-gray-300 text-slate-100 `} key={uniqueID()}>
                   {abilities.ability.name}
                 </div>
               ))}              
@@ -99,7 +102,7 @@ const PokemonId = () => {
 
        {
         pokemon?.stats.map((stat) => (
-          <article className=' w-3/4 ' key={stat.stat.url}>
+          <article className=' w-3/4 ' key={uniqueID()}>
             <section className='flex justify-between items-baseline'>
               <h5 className=' pt-4 font-bold'>{stat.stat.name.toUpperCase() + ":"}</h5>
               <span className=' font-bold'>{stat.base_stat + " / 255"}</span>
@@ -133,7 +136,7 @@ const PokemonId = () => {
           </div>
           <div className="flex flex-wrap">
             {pokemon?.moves?.map((moves) => (
-              <div className="pt-2 pb-2 pl-8 pr-8 m-2 rounded-3xl bg-slate-200" key={moves?.move.url}>
+              <div className="pt-2 pb-2 pl-8 pr-8 m-2 rounded-3xl bg-slate-200" key={uniqueID()}>
                 {moves.move.name}
               </div>
             ))}
