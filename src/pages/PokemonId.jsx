@@ -19,6 +19,7 @@ const PokemonId = () => {
     return Math.random().toString(30).substring(2);           
 } 
 
+
   useEffect(() => {
     const URL = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`;
 
@@ -70,7 +71,7 @@ const PokemonId = () => {
             <h3 className='text-xl font-bold'>Type</h3>
             <div className="flex ml-8 mr-8 justify-center">
               {pokemon?.types?.map((types) => (
-                <div className={`pt-1 pb-1 pl-4 pr-4 m-4 rounded-3xl ${pokemon?.types[0].type.name} text-slate-100 `} key={types.type.url}>
+                <div className={`pt-1 pb-1 pl-4 pr-4 m-4 rounded-3xl ${pokemon?.types[0].type.name} text-slate-100 `} key={uniqueID()}>
                   {types.type.name}
                 </div>
               ))}              
@@ -129,12 +130,13 @@ const PokemonId = () => {
   </section>
 
      
-  <div className="m-auto mt-24 mb-24 pb-16 pl-16 pr-16 max-w-6xl rounded shadow-2xl text-center flex flex-col items-center">
-          <div className="title">
-            <h1 className="text-black p-8">Movements</h1>
-            <hr />
-          </div>
-          <div className="flex flex-wrap">
+  <div className="mx-auto mt-24 mb-24 pb-16 pl-3 pr-3 max-w-6xl w-full rounded shadow-2xl text-center flex flex-col justify-center">
+  <div className='flex justify-center items-center mx-auto w-[75%]'>
+        <h4 className='text-center text-3xl font-semibold pr-5'>Movements</h4>
+        <hr className='w-[80%]' />
+        <img src={pokeball} alt="" />
+        </div>
+        <div className="flex flex-wrap justify-center mx-auto w-[90%] ">
             {pokemon?.moves?.map((moves) => (
               <div className="pt-2 pb-2 pl-8 pr-8 m-2 rounded-3xl bg-slate-200" key={uniqueID()}>
                 {moves.move.name}
