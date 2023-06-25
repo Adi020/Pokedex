@@ -28,7 +28,7 @@ const Pokedex = () => {
       setCurrentType(e.target.value)
     }
 
-    const pokemonsByName = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(namePokemon.toLowerCase()))
+    const pokemonsByName = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(namePokemon.toLowerCase().trim()))
 
     const paginationLogic = () => {
 
